@@ -149,13 +149,13 @@ function Wanderer({wandererList, setWandererList, gruppen, setGruppen, touren}) 
 
                                 <button
                                     onClick={() => handleDeleteWanderer(w.id)}
-                                    style={{ marginTop: '5px' }}
+                                    style={{ marginTop: '5px', fontSize: '13px' }}
                                 >
-                                    ❌ Löschen
+                                    Löschen
                                 </button>
 
                                 <div style={{ marginTop: '5px' }}>
-                                    <select
+                                    <select style={{height:'30px'}}
                                         value={selectedGroupId[w.id] || ''}
                                         onChange={(e) =>
                                             setSelectedGroupId(prev => ({ ...prev, [w.id]: e.target.value }))
@@ -166,8 +166,8 @@ function Wanderer({wandererList, setWandererList, gruppen, setGruppen, touren}) 
                                             <option key={g.id} value={g.id}>{g.name}</option>
                                         ))}
                                     </select>
-                                    <button onClick={() => handleAddToGroup(w.id, selectedGroupId[w.id])}>
-                                        ➕ Zur Gruppe
+                                    <button style={{fontSize:'14px'}} onClick={() => handleAddToGroup(w.id, selectedGroupId[w.id])}>
+                                        Zur Gruppe
                                     </button>
                                 </div>
                             </li>

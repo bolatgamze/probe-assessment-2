@@ -14,7 +14,7 @@ function App() {
         {
             id: 1,
             name: 'Gandalf',
-            surname: 'Grauer',
+            surname: 'der Grauer',
             phone: '',
             address: ''
         },
@@ -26,18 +26,66 @@ function App() {
             address: 'Asgard'
         }
     ]);
+    const [gruppen, setGruppen] = useState([
+        {
+            id: 1,
+            name: "Familie",
+            members: [1,2],
+            tourId: null
+        },
+        {
+            id: 2,
+            name: "Freunde",
+            members: [],
+            tourId: null
+        }
 
-  return (
+    ]);
+    const [touren, setTouren] = useState([
+        {
+            id: 1,
+            name: 'Eifelstieg',
+            schwierigkeitsgrad: 'mittel',
+            maxTeilnehmer: 10,
+            image: 'src/image/Eifelsteig.png',
+        },
+        {
+            id: 2,
+            name: 'Rheinburgenweg',
+            schwierigkeitsgrad: 'leicht',
+            maxTeilnehmer: 8,
+            image: 'src/image/rheinburgenweg.png',
+        },
+        {
+            id: 3,
+            name: 'Stausee',
+            schwierigkeitsgrad: 'schwer',
+            maxTeilnehmer: 5,
+            image: 'src/image/stausee.png',
+        }
+    ]);
+
+
+    return (
     <>
         <NavBar />
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About/>} />
             <Route path="/wanderer" element={<Wanderer
-            wandererList={wandererList} setWandererList={setWandererList} />} />
-            <Route path="/touren" element={<Touren />} />
+            wandererList={wandererList}
+            setWandererList={setWandererList}
+            gruppen={gruppen}
+            setGruppen={setGruppen}
+            touren={touren}/>} />
+            <Route path="/touren" element={<Touren
+            touren={touren}
+            setTouren={setTouren}/>} />
             <Route path="/gruppen" element={<Gruppen
-            wandererList={wandererList}/>} />
+            wandererList={wandererList}
+            gruppen={gruppen}
+            setGruppen={setGruppen}
+            touren={touren}/>} />
 
 
         </Routes>
