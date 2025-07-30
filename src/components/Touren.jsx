@@ -101,7 +101,7 @@ function Touren({touren, setTouren}) {
                         <p>Zustand: <strong>{tour.schwierigkeitsgrad}</strong></p>
                         <p>Max. Teilnehmer: {tour.maxTeilnehmer}</p>
                         <button onClick={() => handleDeleteTour(tour.id)} style={{ marginTop: '10px' }}>
-                            ❌ Tour löschen
+                            Tour löschen
                         </button>
                     </div>
                 ))}
