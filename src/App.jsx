@@ -74,18 +74,18 @@ function App() {
     <>
         <NavBar />
         <Routes>
-            <Route path="" element={<Home />} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/wanderer" element={<Wanderer
+            <Route path="/probe-assessment-2/" element={<Home />} />
+            <Route path="/probe-assessment-2/about" element={<About/>} />
+            <Route path="/probe-assessment-2/wanderer" element={<Wanderer
             wandererList={wandererList}
             setWandererList={setWandererList}
             gruppen={gruppen}
             setGruppen={setGruppen}
             touren={touren}/>} />
-            <Route path="/touren" element={<Touren
+            <Route path="/probe-assessment-2/touren" element={<Touren
             touren={touren}
             setTouren={setTouren}/>} />
-            <Route path="/gruppen" element={<Gruppen
+            <Route path="/probe-assessment-2/gruppen" element={<Gruppen
             wandererList={wandererList}
             gruppen={gruppen}
             setGruppen={setGruppen}
