@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 
-function Touren() {
-    const [touren, setTouren] = useState([
-        //muster tour
-        { id: 1, name: 'Bergpfad', schwierigkeitsgrad: 'mittel', maxTeilnehmer: 10 },
-    ]);
+function Touren({touren, setTouren}) {
 
     const [newTour, setNewTour] = useState({
         name: '',
@@ -24,6 +20,10 @@ function Touren() {
         setNewTour(prev => ({ ...prev, maxTeilnehmer: e.target.value }));
     }
 
+    function handleDeleteTour(id) {
+        setTouren(prev => prev.filter(tour => tour.id !== id));
+    }
+
     function handleAddTour(e) {
         e.preventDefault();
 
@@ -40,11 +40,11 @@ function Touren() {
             id: Date.now(),
             name: newTour.name,
             schwierigkeitsgrad: newTour.schwierigkeitsgrad,
-            maxTeilnehmer: Number(newTour.maxTeilnehmer)
+            maxTeilnehmer: Number(newTour.maxTeilnehmer),
+            image: 'src/image/wandernmuster.png',
         };
 
-
-        setTouren(prevTouren => [...prevTouren, neueTour]);
+        setTouren(prev => [...prev, neueTour]);
 
         setNewTour({
             name: '',
@@ -54,7 +54,7 @@ function Touren() {
     }
 
     return (
-        <div>
+        <div className="card">
             <h2>Wandertouren</h2>
 
             <form onSubmit={handleAddTour} style={{ marginBottom: '20px', display: 'flex', gap: '10px' }}>
@@ -84,13 +84,28 @@ function Touren() {
                 <button type="submit">Tour hinzufügen</button>
             </form>
 
-            <ul>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
                 {touren.map(tour => (
-                    <li key={tour.id}>
-                        <strong>{tour.name}</strong> – {tour.schwierigkeitsgrad} – max. {tour.maxTeilnehmer} Teilnehmer
-                    </li>
+                    <div key={tour.id} style={{
+                        border: '1px solid #ccc',
+                        borderRadius: '8px',
+                        width: '250px',
+                        padding: '10px'
+                    }}>
+                        <img
+                            src={tour.image}
+                            alt={tour.name}
+                            style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: '4px' }}
+                        />
+                        <h3>{tour.name}</h3>
+                        <p>Zustand: <strong>{tour.schwierigkeitsgrad}</strong></p>
+                        <p>Max. Teilnehmer: {tour.maxTeilnehmer}</p>
+                        <button onClick={() => handleDeleteTour(tour.id)} style={{ marginTop: '10px' }}>
+                            ❌ Tour löschen
+                        </button>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }

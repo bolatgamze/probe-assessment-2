@@ -3,14 +3,33 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
-        <nav style={{ marginBottom: '20px' }}>
-            <Link to="/" style={{ marginRight: 10 }}>Home</Link>
-            <Link to="/about" style={{ marginRight: 10 }}>About</Link>
-            <Link to="/touren" style={{ marginRight: 10 }}>Wandertouren</Link>
-            <Link to="/wanderer" style={{ marginRight: 10 }}>Wanderer</Link>
-            <Link to="/gruppen" style={{ marginRight: 10 }}>Gruppen</Link>
+        <nav style={{
+            backgroundColor: '#637a43',
+            padding: '15px',
+            display: 'flex',
+            justifyContent: 'space-around',
+            minWidth: '600px',
+            color: 'white',
+            boxShadow: '0 2px 5px rgba(0,0,0,0.3)',
+            position: 'sticky',
+            top: 0,
+            zIndex: 1000
+        }}>
+            <Link to="/" style={linkStyle}>Home</Link>
+            <Link to="/wanderer" style={linkStyle}>Wanderer</Link>
+            <Link to="/gruppen" style={linkStyle}>Gruppen</Link>
+            <Link to="/touren" style={linkStyle}>Touren</Link>
+            <Link to="/about" style={linkStyle}>About</Link>
         </nav>
     );
 }
+
+const linkStyle = {
+    color: 'white',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    fontSize: '18px',
+    padding: '5px 10px'
+};
 
 export default NavBar;
