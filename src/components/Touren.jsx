@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import defaultImage from '../image/wandernmuster.png';
 
-function Touren({touren, setTouren}) {
+function Touren({ touren, setTouren }) {
 
     const [newTour, setNewTour] = useState({
         name: '',
@@ -41,7 +42,7 @@ function Touren({touren, setTouren}) {
             name: newTour.name,
             schwierigkeitsgrad: newTour.schwierigkeitsgrad,
             maxTeilnehmer: Number(newTour.maxTeilnehmer),
-            image: 'src/image/wandernmuster.png',
+            image: defaultImage,
         };
 
         setTouren(prev => [...prev, neueTour]);
@@ -90,12 +91,18 @@ function Touren({touren, setTouren}) {
                         border: '1px solid #ccc',
                         borderRadius: '8px',
                         width: '250px',
-                        padding: '10px'
+                        padding: '10px',
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)'
                     }}>
                         <img
                             src={tour.image}
                             alt={tour.name}
-                            style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: '4px' }}
+                            style={{
+                                width: '100%',
+                                height: '150px',
+                                objectFit: 'cover',
+                                borderRadius: '4px'
+                            }}
                         />
                         <h3>{tour.name}</h3>
                         <p>Zustand: <strong>{tour.schwierigkeitsgrad}</strong></p>

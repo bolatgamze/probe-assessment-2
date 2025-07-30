@@ -8,6 +8,10 @@ import Wanderer from "./components/Wanderer.jsx";
 import Touren from "./components/Touren.jsx";
 import Gruppen from "./components/Gruppen.jsx";
 import {useState} from "react";
+import eifel from './image/Eifelsteig.png';
+import rhein from './image/rheinburgenweg.png';
+import stausee from './image/stausee.png';
+
 
 function App() {
     const [wandererList, setWandererList] = useState([
@@ -47,21 +51,21 @@ function App() {
             name: 'Eifelstieg',
             schwierigkeitsgrad: 'mittel',
             maxTeilnehmer: 10,
-            image: 'src/image/Eifelsteig.png',
+            image: eifel,
         },
         {
             id: 2,
             name: 'Rheinburgenweg',
             schwierigkeitsgrad: 'leicht',
             maxTeilnehmer: 8,
-            image: 'src/image/rheinburgenweg.png',
+            image: rhein,
         },
         {
             id: 3,
             name: 'Stausee',
             schwierigkeitsgrad: 'schwer',
             maxTeilnehmer: 5,
-            image: 'src/image/stausee.png',
+            image: stausee,
         }
     ]);
 
