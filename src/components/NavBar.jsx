@@ -15,11 +15,11 @@ function NavBar() {
             top: 0,
             zIndex: 1000
         }}>
-            <Link to="/" style={linkStyle}>Home</Link>
-            <Link to="/wanderer" style={linkStyle}>Wanderer</Link>
-            <Link to="/gruppen" style={linkStyle}>Gruppen</Link>
-            <Link to="/touren" style={linkStyle}>Touren</Link>
-            <Link to="/about" style={linkStyle}>About</Link>
+            <Link to="/probe-assessment-2/" style={linkStyle}>Home</Link>
+            <Link to="/probe-assessment-2/wanderer" style={linkStyle}>Wanderer</Link>
+            <Link to="/probe-assessment-2/gruppen" style={linkStyle}>Gruppen</Link>
+            <Link to="/probe-assessment-2/touren" style={linkStyle}>Touren</Link>
+            <Link to="/probe-assessment-2/about" style={linkStyle}>About</Link>
         </nav>
     );
 }
