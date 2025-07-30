@@ -7,7 +7,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url('/src/image/wald.jpg');
+  background-image: url('/public/wald.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;

@@ -8,9 +8,9 @@ import Wanderer from "./components/Wanderer.jsx";
 import Touren from "./components/Touren.jsx";
 import Gruppen from "./components/Gruppen.jsx";
 import {useState} from "react";
-import eifel from './image/Eifelsteig.png';
-import rhein from './image/rheinburgenweg.png';
-import stausee from './image/stausee.png';
+import eifel from '../public/Eifelsteig.png';
+import rhein from '../public/rheinburgenweg.png';
+import stausee from '../public/stausee.png';
 
 
 function App() {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import defaultImage from '../image/wandernmuster.png';
+import defaultImage from '../../public/wandernmuster.png';
 
 function Touren({ touren, setTouren }) {
 
